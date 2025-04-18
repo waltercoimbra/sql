@@ -1,0 +1,20 @@
+Criar pasta MS Office Setup
+->goole= Office customization tool => config.office.com/deploymentsettings
+selecionar => Office LTSC professional Plus 2024 - Volume License
+idioma => corresponder com o sistema operacional
+clicar no button => Exportar => Formatos Office Open XML
+
+copiar o arquivo para a pasta criada => MS Office Setup
+
+->google=> Office deployment tool =>Microsoft.com/en-us/download/details.aspx?id=49117
+office Deployment Tool=>Download
+
+copiar o arquivo para a pasta => MS office Setup
+executar o arquivo com administrador.
+escolher a mesma pasta
+ficara 4 arquivos na pasta
+
+executar como administrador o cmd
+CD\
+CD C:\MS Office Setup
+Setup.exe/configure Configuração.xml
