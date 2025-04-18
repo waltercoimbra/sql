@@ -3,12 +3,12 @@
 CRIAR BANCO DE DADOS
 ------------------------------------------
 
-CREATE DATABASE bd_games DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+CREATE DATABASE IF NOT EXISTS bd_games DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE bd_games;
 ------------------------------------------
 CRIAR TABELAS
 ------------------------------------------
-CREATE TABLE usuarios (
+CREATE TABLE if not exists usuarios (
 usuario VARCHAR(10) NOT NULL,
 nome VARCHAR(30) NOT NULL,
 senha VARCHAR(60) NOT  NULL,
@@ -16,21 +16,21 @@ tipo VARCHAR(10) NOT NULL DEFAULT 'editor',
 PRIMARY KEY(usuário)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ===========================================
-CREATE TABLE generos(
+CREATE TABLE if not exists generos(
 cod INT(11) NOT NULL,
 genero VARCHAR(20) NOT NULL,
 PRIMARY KEY(cod)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 ============================================
-CREATE TABLE produtoras (
+CREATE TABLE if not exists produtoras (
 cod INT(11) NOT NULL,
 produtora VARCHAR(20) NOT NULL,
 pais VARCHAR(15) NOT NULL,
 PRIMARY KEY(cod)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 =============================================
-CREATE TABLE jogos(
+CREATE TABLE if not exists jogos(
 cod INT(11) NOT NULL,
 nome VARCHAR(40) NOT NULL,
 genero INT(11) NOT NULL,
@@ -41,4 +41,45 @@ capa VARCHAR(40) DEFAULT NULL,
 PRIMARY KEY(cod),
 FOREIGN KEY(gênero) REFERENCES generos(cod),
 FOREIGN KEY(produtora) REFERENCES produtoras(cod)
-)ENGINE=InnoDB DEFAULT CHARSET=utf8;gê
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+===================================================
+		Descrever uma tabela.
+
+---------------------------------------------------
+DESCRIBE jogos;
+---------------------------------------------------
+Apagar um banco de dados
+----------------------------------------------------
+DROP DATABASE ____________;
+DROP TABLE _____________;
+-----------------------------------------------------
+
+	Table simples de pessoas em um banco `Cadastro`
+
+=================================================
+create table if not exists pessoas (
+id int not null auto_increment,
+nome varchar(30) not null,
+nascimento date,
+sexo enum('M','F'),
+peso decimal(5,2),
+altura decimal(3,1),
+nacionalidade varchar(20) default 'Brasil',
+primary key(id)
+) default charset=utf8;
+
+=======================================================
+
+		Alterar tabelas (criar colunas e apagar)
+
+--------------------------------------------------------
+ALTER TABLE pessoas ADD COLUMN profissao VARCHAR(10);
+ALTER TABLE pessoas DROP COLUMN profissao;
+ALTER TABLE pessoas ADD COLUMN profissao VARCHAR(10) AFTER nome;
+ALTER TABLE pessoas ADD código INT FIRST; (COLUMN é opcional)
+ALTER TABLE pessoas MODIFY COLUMN profissao VARCHAR(20) NOT NULL;
+ALTER TABLE pessoas CHANGE COLUMN profissao prof VARCHAR(30);
+ALTER TABLE pessoas RENAME TO gafanhotos;
+ALTER TABLE pessoas ADD PRIMARY KEY(idpessoas);
+
+
