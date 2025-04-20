@@ -1,4 +1,5 @@
 		BANCO DE DADOS MYSQL
+mysql -u root -p
 ------------------------------------------
 CRIAR BANCO DE DADOS
 ------------------------------------------
@@ -81,5 +82,13 @@ ALTER TABLE pessoas MODIFY COLUMN profissao VARCHAR(20) NOT NULL;
 ALTER TABLE pessoas CHANGE COLUMN profissao prof VARCHAR(30);
 ALTER TABLE pessoas RENAME TO gafanhotos;
 ALTER TABLE pessoas ADD PRIMARY KEY(idpessoas);
+
+==========================================================
+	Editar linhas de uma Tabela
+-------------------------------------------------------------
+UPDATE cursos SET nome 'PHP' WHERE idcursos = '1' limite 1;
+DELETE FROM cursos WHERE idcursos = '3' limit 1;
+TRUCATE cursos; //Apaga todos os resgistros de uma tabela
+
 
 
