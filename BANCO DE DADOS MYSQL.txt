@@ -89,6 +89,15 @@ ALTER TABLE pessoas ADD PRIMARY KEY(idpessoas);
 UPDATE cursos SET nome 'PHP' WHERE idcursos = '1' limite 1;
 DELETE FROM cursos WHERE idcursos = '3' limit 1;
 TRUCATE cursos; //Apaga todos os resgistros de uma tabela
+-----------------------------------------------------------
+
+TABELA CRIADA NO PHPMYADMIN
+==================================
+CREATE TABLE `exemplo`.`amigos` (`id` INT NOT NULL AUTO_INCREMENT , `nome` VARCHAR(30) NOT NULL , `tel` VARCHAR(11) NOT NULL , PRIMARY KEY (`id`), UNIQUE (`nome`)) ENGINE = InnoDB; 
+=====================================
+ALTER TABLE `amigos` CHANGE `tel` `telefone` VARCHAR(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL; 
+ALTER TABLE `amigos` ADD `idade` INT NOT NULL AFTER `telefone`; 
+ALTER TABLE `amigos` ADD `sexo` ENUM('M','F') NOT NULL AFTER `nome`; 
 
 
 
