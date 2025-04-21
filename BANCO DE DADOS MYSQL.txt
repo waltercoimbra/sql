@@ -116,6 +116,12 @@ SELECT * FROM cursos WHERE nome LIKE 'p__t%'
 ------------------------------------------------
 SELECT DISTINCT nacionalidade FROM gafanhotos;
 SELECT COUNT(*) FROM CURSOS;
+SELECT COUNT(*) FROM CURSOS WHERE carga > 40;
+SELECT MAX(carga) FROM cursos;
+SELECT nome, MIN(totaulas) FROM cursos;
+SELECT sum(totaulas) from cursos where ano = '2016';
+SELECT AVG(totaulas) FROM cursos where ano = '2016';
+======================================================
 
 
 
