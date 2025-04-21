@@ -92,12 +92,30 @@ TRUCATE cursos; //Apaga todos os resgistros de uma tabela
 -----------------------------------------------------------
 
 TABELA CRIADA NO PHPMYADMIN
-==================================
+========================================
 CREATE TABLE `exemplo`.`amigos` (`id` INT NOT NULL AUTO_INCREMENT , `nome` VARCHAR(30) NOT NULL , `tel` VARCHAR(11) NOT NULL , PRIMARY KEY (`id`), UNIQUE (`nome`)) ENGINE = InnoDB; 
-=====================================
+========================================
 ALTER TABLE `amigos` CHANGE `tel` `telefone` VARCHAR(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL; 
 ALTER TABLE `amigos` ADD `idade` INT NOT NULL AFTER `telefone`; 
 ALTER TABLE `amigos` ADD `sexo` ENUM('M','F') NOT NULL AFTER `nome`; 
+---------------------------------------------------------------------
+	COMANDO SELECT
+=====================================================================
+SELECT * FROM cursos;
+SELECT * FROM cursos ORDER BY nome;
+SELECT nome,ano FROM cursos WHERE ano < 2017; 
+SELECT nome, carga FROM cursos WHERE ano = '2016';
+SELECT nome, ano FROM cursos WHERE ano BETWEEN 2014 AND 2016;
+SELECT nom, ano FROM cursos WHERE ano IN (2014,2016) ORDER BY ano; 
+SELECT  * FROM cursos WHERE carga > 35 AND totaulas < 30;
+SELECT nome, descrição, ano FROM cursos WHERE ano <= 2015;
+SELECT * FROM cursos WHERE nome LIKE 'P%';
+SELECT * FROM cursos WHERE nome LIKE '%A';
+SELECT * FROM cursos WHERE nome NOT LIKE '%a%';
+SELECT * FROM cursos WHERE nome LIKE 'p__t%'
+------------------------------------------------
+SELECT DISTINCT nacionalidade FROM gafanhotos;
+SELECT COUNT(*) FROM CURSOS;
 
 
 
